@@ -686,6 +686,11 @@
         formResponse.textContent = "An error occurred. Please try again later. " + (err.message || '');
         formResponse.className = "error-message";
         formResponse.style.display = "block";
+          // Reset button if error occurs
+        const submitButton = document.querySelector('.submit-btn');
+        if (submitButton) {
+        submitButton.textContent = "Send Message";
+        submitButton.disabled = false;
       }
     });
 
